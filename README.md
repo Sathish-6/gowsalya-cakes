@@ -5,9 +5,8 @@ brownies, cupcakes, customized cakes and chocolate varieties, baked fresh in
 Thirumangalam, Madurai. Every order flows through WhatsApp, so there is no cart or
 payment backend.
 
-**Live demo sections:** Hero → Categories → About → Featured Products → Why Choose Us →
-Custom Cake → Gallery → Testimonials → Order Form → Contact, plus an intro splash
-screen and a floating WhatsApp button.
+**Live page flow:** Hero → Categories → Featured Products → Custom Cake → Gallery → About →
+Testimonials → WhatsApp CTA, plus an intro splash screen and a floating WhatsApp button.
 
 ## Tech stack
 
@@ -40,10 +39,12 @@ vite.config.js              Vite + React + Tailwind plugins, manual chunk splitt
 public/                     favicon, og-image, splash logo, robots.txt, sitemap.xml
 src/
   App.jsx                   Section order and page shell
-  components/sections/      Navbar, Hero, Categories, About, ProductShowcase,
-                            WhyChooseUs, CustomCake, Gallery, Testimonials,
-                            OrderForm, Contact, Footer
-  components/ui/            Brand, Button, cards, Lightbox, LazyImage, SectionHeading
+  components/sections/      Navbar, Hero, Categories, ProductShowcase, CustomCake,
+                            Gallery, About, Testimonials, WhatsAppCTA, Footer
+                            (WhyChooseUs, OrderForm, Contact & CategorySection are
+                            kept on disk but are not mounted in the current flow)
+  components/ui/            Brand, Button, cards, Lightbox, LazyImage, SectionHeading,
+                            SocialIcons (inline brand glyphs)
   components/decor/         CursorGlow, FrostingBlobs/SugarDivider, FloatingDecor, Reveal
   data/                     Single source of truth: shop, products, gallery,
                             testimonials, nav, images
