@@ -1,0 +1,19 @@
+node_modules
+dist
+dist-ssr
+*.local
+.DS_Store
+.vite
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.*
+.DS_Store
+
+# Local tooling / debug artifacts (browser dumps, dev-server logs)
+dom.html
+*.log
+*.err
+err.txt
+out.txt

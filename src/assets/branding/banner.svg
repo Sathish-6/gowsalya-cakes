@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-label="Gowsalya Cake Shop banner - Homemade Cakes, Cookies, Brownies, Cupcakes, Customized Cakes and Chocolate Varieties">
+  <title>Gowsalya Cake Shop - Homemade Happiness, Baked Fresh</title>
+  <defs>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8639A"/>
+      <stop offset="40%" stop-color="#C21E5C"/>
+      <stop offset="100%" stop-color="#6B0F35"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F6E2AC"/>
+      <stop offset="50%" stop-color="#E3B84F"/>
+      <stop offset="100%" stop-color="#B9871F"/>
+    </linearGradient>
+    <linearGradient id="cream" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FFFCF6"/>
+      <stop offset="100%" stop-color="#F8E9D3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="420" rx="0" fill="url(#cream)"/>
+  <rect x="18" y="18" width="1164" height="384" rx="26" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <rect x="34" y="34" width="1132" height="352" rx="18" fill="none" stroke="#C21E5C" stroke-width="1" opacity=".35" stroke-dasharray="3 7"/>
+
+  <!-- corner flourishes -->
+  <g stroke="url(#gold)" stroke-width="2.5" fill="none" opacity=".9">
+    <path d="M54,96 q0,-42 42,-42 q-18,20 -18,42"/>
+    <path d="M1146,96 q0,-42 -42,-42 q18,20 18,42"/>
+    <path d="M54,324 q0,42 42,42 q-18,-20 -18,-42"/>
+    <path d="M1146,324 q0,42 -42,42 q18,-20 18,-42"/>
+  </g>
+
+  <!-- eyebrow -->
+  <text x="600" y="104" text-anchor="middle" font-family="Verdana, Geneva, sans-serif" font-size="17" letter-spacing="7" fill="#A3164E">HOMEMADE HAPPINESS, BAKED FRESH</text>
+
+  <!-- script-ish brand name -->
+  <text x="600" y="205" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700" fill="url(#band)" letter-spacing="2">GOWSALYA</text>
+  <text x="600" y="262" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="400" fill="#4A2C1A" letter-spacing="14">CAKE SHOP</text>
+
+  <!-- gold divider with heart -->
+  <g transform="translate(600,296)">
+    <line x1="-260" y1="0" x2="-44" y2="0" stroke="url(#gold)" stroke-width="2"/>
+    <line x1="44" y1="0" x2="260" y2="0" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M0,-13 c5,7 14,11 14,19 a14,14 0 0 1 -28,0 c0,-8 9,-12 14,-19 z" fill="#D63A74"/>
+    <circle cx="-30" cy="0" r="3" fill="#E3B84F"/>
+    <circle cx="30" cy="0" r="3" fill="#E3B84F"/>
+  </g>
+
+  <!-- services -->
+  <text x="600" y="350" text-anchor="middle" font-family="Verdana, Geneva, sans-serif" font-size="16" fill="#6B4226" letter-spacing="1.6">Cakes &#8226; Cookies &#8226; Brownies &#8226; Cupcakes &#8226; Customized Cakes &#8226; Chocolate Varieties</text>
+
+  <!-- little cakes flanking -->
+  <g transform="translate(150,300)">
+    <ellipse cx="0" cy="26" rx="34" ry="6" fill="url(#gold)"/>
+    <path d="M-30,4 q7,7 15,0 q8,7 15,0 q8,7 15,0 l0,18 q0,4 -4,4 l-22,0 q-4,0 -4,-4 z" fill="#7A4426"/>
+    <path d="M-22,-16 q6,6 11,0 q6,6 11,0 l0,20 q0,4 -4,4 l-14,0 q-4,0 -4,-4 z" fill="#D63A74"/>
+    <rect x="-3" y="-32" width="6" height="17" rx="3" fill="url(#gold)"/>
+    <path d="M0,-46 c4,5 6,8 6,10 a6,6 0 0 1 -12,0 c0,-2 2,-5 6,-10 z" fill="#FFD97A"/>
+  </g>
+  <g transform="translate(1050,300)">
+    <ellipse cx="0" cy="26" rx="34" ry="6" fill="url(#gold)"/>
+    <path d="M-30,4 q7,7 15,0 q8,7 15,0 q8,7 15,0 l0,18 q0,4 -4,4 l-22,0 q-4,0 -4,-4 z" fill="#5A2E1B"/>
+    <path d="M-22,-16 q6,6 11,0 q6,6 11,0 l0,20 q0,4 -4,4 l-14,0 q-4,0 -4,-4 z" fill="#E8639A"/>
+    <rect x="-3" y="-32" width="6" height="17" rx="3" fill="url(#gold)"/>
+    <path d="M0,-46 c4,5 6,8 6,10 a6,6 0 0 1 -12,0 c0,-2 2,-5 6,-10 z" fill="#FFD97A"/>
+  </g>
+</svg>
