@@ -21,6 +21,7 @@ export default function CategoryCard({ category, index = 0 }) {
   return (
     <motion.article
       id={id}
+      id={id}
       className="group category-card relative flex flex-col overflow-hidden rounded-[1.5rem] bg-white/80 shadow-soft ring-1 ring-berry-100/70 backdrop-blur-sm transition-shadow duration-500 hover:shadow-lift"
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

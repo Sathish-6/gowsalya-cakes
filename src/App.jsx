@@ -4,17 +4,14 @@ import Hero from './components/sections/Hero';
 import Categories from './components/sections/Categories';
 import About from './components/sections/About';
 import ProductShowcase from './components/sections/ProductShowcase';
-import WhyChooseUs from './components/sections/WhyChooseUs';
 import CustomCake from './components/sections/CustomCake';
 import Gallery from './components/sections/Gallery';
 import Testimonials from './components/sections/Testimonials';
-import OrderForm from './components/sections/OrderForm';
-import Contact from './components/sections/Contact';
 import Footer from './components/sections/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import CursorGlow from './components/decor/CursorGlow';
-import { SugarDivider } from './components/decor/FrostingBlobs';
 import SplashScreen from './components/SplashScreen';
+import WhatsAppCTA from './components/sections/WhatsAppCTA';
 
 /**
  * Gowsalya Cake Shop — single page demo site.
@@ -43,16 +40,13 @@ export default function App() {
 
       <main id="main">
         <Hero />
-        <SugarDivider />
         <Categories />
-        <About />
         <ProductShowcase />
-        <WhyChooseUs />
         <CustomCake />
         <Gallery />
+        <About />
         <Testimonials />
-        <OrderForm />
-        <Contact />
+        <WhatsAppCTA />
       </main>
 
       <Footer />

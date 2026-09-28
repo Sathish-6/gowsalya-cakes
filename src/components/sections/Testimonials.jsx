@@ -1,123 +1,88 @@
-import { useCallback, useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronLeft, ChevronRight, Quote, Star } from 'lucide-react';
+import { useRef } from 'react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { TESTIMONIALS } from '../../data/testimonials';
 import SectionHeading from '../ui/SectionHeading';
-import { Reveal } from '../decor/Reveal';
 import { SoftSection } from '../decor/FrostingBlobs';
 
-/** Sliding customer review carousel with dots and arrow controls. */
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
-  const [dir, setDir] = useState(1);
+  const carouselRef = useRef(null);
 
-  const go = useCallback((next) => {
-    setDir(next > 0 ? 1 : -1);
-    setIndex((next + TESTIMONIALS.length) % TESTIMONIALS.length);
-  }, []);
-
-  useEffect(() => {
-    if (TESTIMONIALS.length < 2) return undefined;
-    const reduce =
-      typeof window.matchMedia === 'function' &&
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce) return undefined;
-
-    const timer = setInterval(() => {
-      setDir(1);
-      setIndex((i) => (i + 1) % TESTIMONIALS.length);
-    }, 6500);
-
-    return () => clearInterval(timer);
-  }, []);
-
-  const current = TESTIMONIALS[index];
+  const move = (direction) => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+    const card = carousel.querySelector('[data-review-card]');
+    const amount = card ? card.getBoundingClientRect().width + 16 : carousel.clientWidth * 0.8;
+    carousel.scrollBy({ left: amount * direction, behavior: 'smooth' });
+  };
 
   return (
-    <SoftSection id="reviews" tone="blush">
+    <SoftSection id="reviews" tone="blush" className="splash-section-space">
       <div className="container-gc">
         <SectionHeading
-          eyebrow="Customer love"
-          title="Rated 5 stars by"
-          highlight="our customers"
-          script="Sweet words"
-          description="Birthdays, weddings and everyday treats — here is what people say after the first bite."
+          eyebrow="What our customers say"
+          title="Our Happy Customers"
+          description=""
         />
-
-        <Reveal className="relative mx-auto mt-14 max-w-3xl">
-          <div className="glass-card relative overflow-hidden rounded-[2rem] px-6 py-10 shadow-lift sm:px-12 sm:py-12">
-            <Quote
-              className="absolute -top-2 right-6 h-24 w-24 text-berry-100"
-              aria-hidden="true"
-            />
-
-            <div className="min-h-[230px] sm:min-h-[200px]">
-              <AnimatePresence mode="wait" initial={false}>
-                <motion.figure
-                  key={current.id}
-                  initial={{ opacity: 0, x: dir * 40 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: dir * -40 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                >
-                  <div className="flex justify-center gap-1 sm:justify-start" aria-label={`${current.rating} out of 5 stars`}>
-                    {Array.from({ length: current.rating }).map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-gold-400 text-gold-400" aria-hidden="true" />
-                    ))}
+        <div
+          ref={carouselRef}
+          className="review-carousel mt-9 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 sm:mt-12 sm:gap-5"
+          aria-label="Customer reviews"
+        >
+          {TESTIMONIALS.map((review) => {
+            const initials = review.name
+              .split(/\s+/)
+              .slice(0, 2)
+              .map((part) => part[0])
+              .join('');
+            return (
+              <article
+                key={review.id}
+                data-review-card
+                className="review-card flex min-w-[82vw] snap-start flex-col rounded-2xl border border-berry-100 bg-white/85 p-5 shadow-soft sm:min-w-[calc((100%-1.25rem)/2)] lg:min-w-[calc((100%-2.5rem)/3)]"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border-2 border-white bg-gradient-to-br from-blush-200 to-berry-300 font-display text-lg font-bold text-berry-800 shadow-soft" aria-label={`${review.name} avatar`}>
+                    {initials}
+                  </span>
+                  <div className="min-w-0 pt-1">
+                    <div className="flex gap-0.5" aria-label={`${review.rating} out of 5 stars`}>
+                      {Array.from({ length: review.rating }).map((_, index) => (
+                        <Star key={index} className="h-4 w-4 fill-gold-400 text-gold-400" aria-hidden="true" />
+                      ))}
+                    </div>
+                    <p className="mt-1 text-xs text-choco-400">{review.role}</p>
                   </div>
-
-                  <blockquote className="mt-5 text-center text-lg leading-relaxed text-choco-700 sm:text-left sm:text-xl">
-                    “{current.text}”
-                  </blockquote>
-
-                  <figcaption className="mt-6 flex flex-col items-center gap-1 sm:items-start">
-                    <span className="font-display text-lg font-bold text-berry-700">{current.name}</span>
-                    <span className="text-sm text-choco-400">
-                      {current.role} · {current.product}
-                    </span>
-                  </figcaption>
-                </motion.figure>
-              </AnimatePresence>
-            </div>
-          </div>
-
-          {/* Controls */}
-          <div className="mt-8 flex items-center justify-center gap-5">
-            <button
-              type="button"
-              onClick={() => go(index - 1)}
-              aria-label="Previous review"
-              className="grid h-10 w-10 place-items-center rounded-full bg-white/80 text-berry-700 shadow-soft ring-1 ring-cream-200 transition hover:bg-white active:scale-95"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-
-            <div className="flex items-center gap-2" role="tablist" aria-label="Choose review">
-              {TESTIMONIALS.map((t, i) => (
-                <button
-                  key={t.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={i === index}
-                  aria-label={`Review ${i + 1} of ${TESTIMONIALS.length}`}
-                  onClick={() => go(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 ${
-                    i === index ? 'w-7 bg-berry-500' : 'w-2.5 bg-cream-300 hover:bg-berry-300'
-                  }`}
-                />
-              ))}
-            </div>
-
-            <button
-              type="button"
-              onClick={() => go(index + 1)}
-              aria-label="Next review"
-              className="grid h-10 w-10 place-items-center rounded-full bg-white/80 text-berry-700 shadow-soft ring-1 ring-cream-200 transition hover:bg-white active:scale-95"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </Reveal>
+                </div>
+                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-choco-600">
+                  “{review.text}”
+                </blockquote>
+                <div className="mt-4 border-t border-cream-200 pt-3">
+                  <p className="font-display font-bold text-berry-700">{review.name}</p>
+                  <p className="mt-0.5 text-xs text-choco-400">Madurai</p>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-3 flex items-center justify-center gap-3">
+          <button
+            type="button"
+            onClick={() => move(-1)}
+            aria-label="Previous customer reviews"
+            className="grid h-10 w-10 place-items-center rounded-full border border-berry-200 bg-white/80 text-berry-700 shadow-soft transition hover:bg-berry-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-berry-600"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+          <span className="text-xs font-semibold text-choco-400">Swipe to read more</span>
+          <button
+            type="button"
+            onClick={() => move(1)}
+            aria-label="Next customer reviews"
+            className="grid h-10 w-10 place-items-center rounded-full border border-berry-200 bg-white/80 text-berry-700 shadow-soft transition hover:bg-berry-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-berry-600"
+          >
+            <ChevronRight className="h-5 w-5" />
+          </button>
+        </div>
       </div>
     </SoftSection>
   );

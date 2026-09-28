@@ -610,6 +610,418 @@
       animation: none;
     }
   }
+
+  .splash-section-space {
+    padding-block: clamp(3.75rem, 7vw, 6.5rem);
+  }
+
+  .hero-section {
+    min-height: 100vh;
+    min-height: 100dvh;
+    background-color: #fffcf6;
+    isolation: isolate;
+  }
+
+  .hero-bokeh {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.62;
+    background:
+      radial-gradient(circle at 18% 15%, rgb(255 255 255 / 0.9) 0 3px, transparent 5px),
+      radial-gradient(circle at 78% 21%, rgb(255 255 255 / 0.8) 0 5px, transparent 7px),
+      radial-gradient(circle at 38% 78%, rgb(241 220 162 / 0.65) 0 4px, transparent 6px),
+      radial-gradient(circle at 90% 70%, rgb(255 255 255 / 0.8) 0 3px, transparent 5px);
+    animation: hero-bokeh 16s ease-in-out infinite alternate;
+  }
+
+  .hero-organic {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: 50%;
+    filter: blur(1px);
+  }
+
+  .hero-organic-one {
+    top: 14%;
+    right: -10%;
+    width: min(58vw, 710px);
+    aspect-ratio: 1;
+    background: radial-gradient(circle at 34% 38%, rgb(255 218 232 / 0.8), rgb(255 231 240 / 0.16) 68%, transparent 70%);
+  }
+
+  .hero-organic-two {
+    bottom: -30%;
+    left: -12%;
+    width: min(45vw, 520px);
+    aspect-ratio: 1;
+    background: radial-gradient(circle, rgb(249 237 203 / 0.46), transparent 70%);
+  }
+
+  .hero-cake-frame {
+    border: 7px solid rgb(255 255 255 / 0.84);
+    border-radius: 46% 54% 49% 51% / 43% 45% 55% 57%;
+    box-shadow: 0 28px 70px rgb(122 31 74 / 0.2), 0 0 0 1px rgb(227 184 79 / 0.5);
+    transform: rotate(1deg);
+  }
+
+  .hero-gold-orbit {
+    position: absolute;
+    z-index: 0;
+    inset: -9%;
+    width: 118%;
+    height: 118%;
+    overflow: visible;
+    color: rgb(201 146 44 / 0.8);
+    pointer-events: none;
+  }
+
+  .hero-treat {
+    position: absolute;
+    z-index: 2;
+    width: clamp(104px, 12vw, 150px);
+    overflow: hidden;
+    border: 1px solid rgb(255 255 255 / 0.9);
+    border-radius: 1.15rem;
+    background: rgb(255 255 255 / 0.92);
+    box-shadow: 0 14px 34px rgb(74 44 26 / 0.15);
+    text-align: center;
+    backdrop-filter: blur(12px);
+  }
+
+  .hero-treat > span {
+    display: block;
+    padding: 0.45rem 0.25rem 0.55rem;
+    color: #a3164e;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-style: italic;
+    font-weight: 700;
+  }
+
+  .hero-treat-heart {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    color: #e34f86;
+  }
+
+  .hero-treat-cupcakes {
+    top: 6%;
+    left: -7%;
+    transform: rotate(-7deg);
+  }
+
+  .hero-treat-chocolates {
+    top: 3%;
+    right: -5%;
+    transform: rotate(8deg);
+  }
+
+  .hero-treat-cookies {
+    right: -7%;
+    bottom: 8%;
+    transform: rotate(7deg);
+  }
+
+  .hero-handwriting {
+    position: absolute;
+    z-index: 2;
+    right: -2%;
+    bottom: 2%;
+    color: #c21e5c;
+    font-family: var(--font-script);
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    line-height: 0.95;
+    text-align: center;
+    text-shadow: 0 2px 12px rgb(255 255 255 / 0.9);
+  }
+
+  .hero-sparkle {
+    position: absolute;
+    z-index: 2;
+    color: #c9922c;
+  }
+
+  .hero-sparkle-one {
+    top: 40%;
+    left: -8%;
+    width: 22px;
+  }
+
+  .hero-sparkle-two {
+    right: 12%;
+    top: -4%;
+    width: 16px;
+  }
+
+  .hero-bottom-curve {
+    position: absolute;
+    z-index: 1;
+    right: -5%;
+    bottom: -34px;
+    left: -5%;
+    height: 74px;
+    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+    background: linear-gradient(90deg, #ffe7f0, #fffcf6 45%, #ffe7f0);
+    opacity: 0.76;
+  }
+
+  .category-card {
+    box-shadow: 0 12px 35px -24px rgb(107 15 53 / 0.34);
+  }
+
+  .category-card:hover {
+    box-shadow: 0 20px 42px -22px rgb(194 30 92 / 0.4), 0 0 0 1px rgb(246 179 206 / 0.6);
+  }
+
+  .featured-product-card {
+    min-width: min(77vw, 290px);
+  }
+
+  .featured-product-card > div:last-of-type > div {
+    align-items: flex-start;
+  }
+
+  .featured-product-card > div:last-of-type > div > span:first-child > span {
+    margin-bottom: 0.15rem;
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #c21e5c;
+    text-transform: none;
+  }
+
+  .custom-cake-banner {
+    background:
+      radial-gradient(ellipse at 85% 14%, rgb(255 231 240 / 0.75), transparent 38%),
+      rgb(255 255 255 / 0.85);
+  }
+
+  .custom-cake-image img {
+    transition: transform 900ms cubic-bezier(0.2, 0.7, 0.25, 1);
+  }
+
+  .custom-cake-image:hover img {
+    transform: scale(1.04);
+  }
+
+  .gallery-grid > * {
+    border: 1px solid rgb(255 255 255 / 0.9);
+    box-shadow: 0 14px 34px -24px rgb(74 44 26 / 0.52);
+  }
+
+  .review-carousel {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .review-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .review-card {
+    box-shadow: 0 13px 35px -24px rgb(107 15 53 / 0.38);
+  }
+
+  .whatsapp-cta {
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse at 50% 120%, rgb(255 255 255 / 0.85), transparent 58%),
+      linear-gradient(125deg, #ffe7f0, #fff4f0 48%, #fdf6ea);
+  }
+
+  .whatsapp-cta::before,
+  .whatsapp-cta::after {
+    position: absolute;
+    z-index: -1;
+    right: -8%;
+    left: -8%;
+    height: 80px;
+    border-radius: 50%;
+    background: #fffcf6;
+    content: '';
+  }
+
+  .whatsapp-cta::before {
+    top: -58px;
+  }
+
+  .whatsapp-cta::after {
+    bottom: -64px;
+  }
+
+  .whatsapp-cta-decor,
+  .whatsapp-cta-heart,
+  .whatsapp-cta-sparkle {
+    position: absolute;
+    color: #d63a74;
+    pointer-events: none;
+  }
+
+  .whatsapp-cta-decor {
+    display: grid;
+    width: 5.5rem;
+    height: 5.5rem;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 0.8);
+    border-radius: 1.5rem;
+    background: rgb(255 255 255 / 0.58);
+    color: #c21e5c;
+    box-shadow: 0 12px 30px rgb(107 15 53 / 0.12);
+  }
+
+  .whatsapp-cta-decor svg {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .whatsapp-cta-left {
+    left: 5%;
+    bottom: 17%;
+    transform: rotate(-10deg);
+  }
+
+  .whatsapp-cta-right {
+    right: 5%;
+    bottom: 17%;
+    transform: rotate(10deg);
+  }
+
+  .whatsapp-cta-heart-left {
+    left: 17%;
+    top: 27%;
+    width: 1rem;
+  }
+
+  .whatsapp-cta-heart-right {
+    right: 18%;
+    top: 26%;
+    width: 1.3rem;
+  }
+
+  .whatsapp-cta-sparkle {
+    top: 24%;
+    left: 28%;
+    width: 1.2rem;
+    color: #c9922c;
+  }
+
+  .site-footer {
+    background:
+      radial-gradient(ellipse at 8% 0%, rgb(255 231 240 / 0.62), transparent 38%),
+      #fffcf6;
+  }
+
+  @keyframes hero-bokeh {
+    from {
+      transform: translate3d(-0.4%, -0.3%, 0);
+    }
+    to {
+      transform: translate3d(0.4%, 0.3%, 0);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hero-section {
+      min-height: auto;
+      padding-bottom: 4.5rem;
+    }
+
+    .hero-art {
+      width: min(100%, 420px);
+      margin-top: 0.5rem;
+    }
+
+    .hero-cake-frame {
+      width: min(76vw, 390px);
+    }
+
+    .hero-treat {
+      width: 98px;
+      border-radius: 0.85rem;
+    }
+
+    .hero-treat > span {
+      padding-block: 0.35rem;
+      font-size: 0.75rem;
+    }
+
+    .hero-treat img {
+      height: 3.2rem;
+    }
+
+    .hero-treat-cupcakes {
+      top: 1%;
+      left: 0;
+    }
+
+    .hero-treat-chocolates {
+      top: 4%;
+      right: -1%;
+    }
+
+    .hero-treat-cookies {
+      right: -1%;
+      bottom: 3%;
+    }
+
+    .hero-handwriting {
+      right: 0;
+      bottom: -3%;
+      font-size: 1.5rem;
+    }
+
+    .hero-gold-orbit {
+      inset: -8%;
+    }
+
+    .whatsapp-cta-decor {
+      width: 3.5rem;
+      height: 3.5rem;
+      border-radius: 1rem;
+      opacity: 0.72;
+    }
+
+    .whatsapp-cta-decor svg {
+      width: 1.8rem;
+      height: 1.8rem;
+    }
+
+    .whatsapp-cta-left {
+      left: -1%;
+      bottom: 8%;
+    }
+
+    .whatsapp-cta-right {
+      right: -1%;
+      bottom: 8%;
+    }
+
+    .whatsapp-cta-heart-left {
+      left: 12%;
+      top: 18%;
+    }
+
+    .whatsapp-cta-heart-right {
+      right: 12%;
+      top: 16%;
+    }
+
+    .whatsapp-cta-sparkle {
+      left: 8%;
+      top: 48%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-bokeh {
+      animation: none;
+    }
+  }
 }
 
 @layer utilities {

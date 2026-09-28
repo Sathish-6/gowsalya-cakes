@@ -6,7 +6,7 @@ export const NAV_LINKS = [
   { label: 'Home', href: '#home', id: 'home' },
   { label: 'About', href: '#about', id: 'about' },
   { label: 'Menu', href: '#menu', id: 'menu', hasDropdown: true },
-  { label: 'Customized', href: '#custom-cakes', id: 'custom-cakes' },
+  { label: 'Customized Cakes', href: '#custom-cakes', id: 'custom-cakes' },
   { label: 'Gallery', href: '#gallery', id: 'gallery' },
   { label: 'Reviews', href: '#reviews', id: 'reviews' },
   { label: 'Contact', href: '#contact', id: 'contact' },
@@ -34,21 +34,15 @@ export const MENU_DROPDOWN = CATEGORIES.map((c) => ({
 
 export const FOOTER_LINKS = [
   {
-    title: 'Explore',
+    title: 'Quick Links',
     links: [
-      { label: 'About Us', href: '#about' },
-      { label: 'Our Menu', href: '#menu' },
+      { label: 'Home', href: '#home' },
+      { label: 'About', href: '#about' },
+      { label: 'Menu', href: '#menu' },
+      { label: 'Customized Cakes', href: '#custom-cakes' },
       { label: 'Gallery', href: '#gallery' },
       { label: 'Reviews', href: '#reviews' },
-    ],
-  },
-  {
-    title: 'Order',
-    links: [
-      { label: 'Order Now', href: '#order' },
-      { label: 'Customized Cakes', href: '#customized-cakes' },
-      { label: 'Chocolate Varieties', href: '#chocolate-varieties' },
-      { label: 'Contact Us', href: '#contact' },
+      { label: 'Contact', href: '#contact' },
     ],
   },
 ];

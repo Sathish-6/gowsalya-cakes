@@ -30,7 +30,7 @@ export default function FloatingWhatsApp() {
   }, [dismissed]);
 
   const href = waLink(buildOrderMessage({ product: 'New order enquiry' }));
-  const visible = scrolled && !dismissed;
+  const visible = (scrolled || !isDesktop) && !dismissed;
 
   return (
     <>

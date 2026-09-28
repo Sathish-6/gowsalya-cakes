@@ -5,9 +5,9 @@ import useActiveSection from '../../hooks/useActiveSection';
 import useScrolled from '../../hooks/useScrolled';
 import useBodyScrollLock from '../../hooks/useBodyScrollLock';
 import { MENU_DROPDOWN, NAV_LINKS, TRACKED_SECTIONS } from '../../data/nav';
-import { WHATSAPP_DISPLAY, WHATSAPP_TEL } from '../../lib/whatsapp';
+import { buildOrderMessage, WHATSAPP_DISPLAY, WHATSAPP_TEL, waLink } from '../../lib/whatsapp';
 import { BrandLockup } from '../ui/Brand';
-import { WhatsAppButton } from '../ui/Button';
+import { WhatsAppButton, WhatsAppIcon } from '../ui/Button';
 
 /** Ids the navbar highlights while scrolling (kept in sync with the sitemap). */
 export const SECTION_IDS = TRACKED_SECTIONS;
@@ -204,6 +204,12 @@ export default function Navbar() {
   const active = useActiveSection(SECTION_IDS);
   const [open, setOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const mobileOrderUrl = waLink(
+    buildOrderMessage({
+      product: 'New order enquiry',
+      requirements: 'I would like to know your menu and prices.',
+    })
+  );
 
   useBodyScrollLock(open);
 
@@ -242,7 +248,7 @@ export default function Navbar() {
           }`}
         >
           <nav
-            className="container-gc flex items-center justify-between gap-4 py-3"
+            className={`container-gc flex items-center justify-between gap-3 transition-all duration-300 ${scrolled ? 'py-2' : 'py-3'}`}
             aria-label="Main navigation"
           >
             <a href="#home" className="shrink-0" aria-label="Gowsalya Cake Shop — home">
@@ -262,10 +268,20 @@ export default function Navbar() {
               <WhatsAppButton
                 product="New order enquiry"
                 requirements="I would like to know your menu and prices."
-                label="Order Now"
+                label="Order on WhatsApp"
                 size="sm"
               />
             </div>
+
+            <a
+              href={mobileOrderUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Order on WhatsApp"
+              className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-[#25D366] text-white shadow-whatsapp lg:hidden"
+            >
+              <WhatsAppIcon className="h-5 w-5" />
+            </a>
 
             <button
               type="button"

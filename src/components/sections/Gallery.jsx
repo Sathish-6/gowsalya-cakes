@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Expand, X } from 'lucide-react';
+import { Expand, Heart } from 'lucide-react';
 import { GALLERY } from '../../data/gallery';
 import { photo } from '../../data/images';
 import LazyImage from '../ui/LazyImage';
@@ -8,6 +7,7 @@ import Lightbox from '../ui/Lightbox';
 import SectionHeading from '../ui/SectionHeading';
 import { StaggerParent, StaggerItem } from '../decor/Reveal';
 import { SoftSection } from '../decor/FrostingBlobs';
+import { WhatsAppButton } from '../ui/Button';
 
 const sizeClass = {
   tall: 'row-span-2 sm:row-span-2',
@@ -20,17 +20,17 @@ export default function Gallery() {
   const [lightbox, setLightbox] = useState(null);
 
   return (
-    <SoftSection id="gallery" tone="cream">
+    <SoftSection id="gallery" tone="cream" className="splash-section-space">
       <div className="container-gc">
         <SectionHeading
           eyebrow="Our gallery"
-          title="A peek inside our"
-          highlight="kitchen"
-          script="Fresh from the oven"
-          description="Real bakes, real finishes. Tap any photo to view it larger."
+          title="Sweet Creations,"
+          highlight="Happy Moments"
+          script=""
+          description=""
         />
 
-        <StaggerParent className="mt-14 grid auto-rows-[180px] grid-cols-2 gap-4 sm:auto-rows-[220px] sm:grid-cols-3 lg:grid-cols-4">
+        <StaggerParent className="gallery-grid mt-10 grid auto-rows-[145px] grid-cols-2 gap-3 sm:auto-rows-[190px] sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
           {GALLERY.map((item, index) => {
             const img = photo(item.image, { w: 800 });
             return (
@@ -68,7 +68,10 @@ export default function Gallery() {
                     className="pointer-events-none absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/20 text-white opacity-0 backdrop-blur transition-opacity duration-500 group-hover:opacity-100"
                     aria-hidden="true"
                   >
-                    <Expand className="h-4 w-4" />
+                    <span className="flex items-center gap-1">
+                      <Heart className="h-3.5 w-3.5 fill-current" />
+                      <Expand className="h-3.5 w-3.5" />
+                    </span>
                   </span>
 
                   {/* Small screens have no hover — keep a readable caption. */}
@@ -83,6 +86,16 @@ export default function Gallery() {
             );
           })}
         </StaggerParent>
+
+        <div className="mt-8 flex justify-center">
+          <WhatsAppButton
+            product="More bakery photos"
+            requirements="Please share more photos of your cakes and treats."
+            label="View More Photos"
+            variant="outline"
+            size="sm"
+          />
+        </div>
 
         {lightbox !== null ? (
           <Lightbox

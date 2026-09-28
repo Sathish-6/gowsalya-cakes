@@ -6,18 +6,14 @@
  */
 
 export const GALLERY = [
-  { id: 'g1', image: 'chocolateDrip', caption: 'Chocolate truffle drip cake', size: 'tall' },
-  { id: 'g2', image: 'bakingHands', caption: 'Finishing touches, by hand', size: 'wide' },
-  { id: 'g3', image: 'rainbowCups', caption: 'Rainbow sprinkle cupcakes', size: 'normal' },
-  { id: 'g4', image: 'chocChip', caption: 'Chocolate chip cookies', size: 'normal' },
-  { id: 'g5', image: 'pinkDrip', caption: 'Strawberry drip cake', size: 'tall' },
-  { id: 'g6', image: 'bakeryShelf', caption: 'Our bakery shelf', size: 'normal' },
-  { id: 'g7', image: 'mirrorGlaze', caption: 'Mirror glaze celebration cake', size: 'wide' },
-  { id: 'g8', image: 'strawberryCups', caption: 'Fresh strawberry cupcakes', size: 'normal' },
-  { id: 'g9', image: 'toast', caption: 'Celebrating together', size: 'normal' },
-  { id: 'g10', image: 'cookieBasket', caption: 'Assorted cookie box', size: 'normal' },
-  { id: 'g11', image: 'mintCups', caption: 'Mint buttercream cupcakes', size: 'normal' },
-  { id: 'g12', image: 'pearlCake', caption: 'Pearl chocolate cake', size: 'tall' },
+  { id: 'g1', image: 'chocolateDrip', caption: 'Chocolate truffle cake', size: 'tall' },
+  { id: 'g2', image: 'raspberry', caption: 'Red velvet cake', size: 'normal' },
+  { id: 'g3', image: 'rainbowCups', caption: 'Freshly frosted cupcakes', size: 'normal' },
+  { id: 'g4', image: 'sprinkleBar', caption: 'Rich chocolate brownies', size: 'wide' },
+  { id: 'g5', image: 'chocChip', caption: 'Freshly baked cookies', size: 'normal' },
+  { id: 'g6', image: 'pearlCake', caption: 'Pearl chocolate cake', size: 'normal' },
+  { id: 'g7', image: 'chocolateBun', caption: 'Chocolate bundt cake', size: 'tall' },
+  { id: 'g8', image: 'pinkDrip', caption: 'Customized celebration cake', size: 'wide' },
 ];
 
 /** Value propositions for the "Why Choose Us" band. */
