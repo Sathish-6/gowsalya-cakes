@@ -16,7 +16,7 @@ const featuredItems = [
 const featuredProducts = featuredItems.map(({ lookup, ...details }) => {
   const product = ALL_PRODUCTS.find((item) => item.name === lookup);
   if (!product) throw new Error(`Featured product "${lookup}" is missing from the catalogue`);
-  return { ...product, ...details };
+  return { ...product, ...details, signature: false, tags: [] };
 });
 
 export default function ProductShowcase() {
@@ -30,7 +30,7 @@ export default function ProductShowcase() {
           script="Made fresh, shared with love"
           description=""
         />
-        <div className="mt-8 flex justify-center sm:mt-10">
+        <div className="mt-8 flex justify-center sm:mt-10 sm:justify-end">
           <WhatsAppButton
             product="Full menu"
             requirements="Please share the full menu and prices."

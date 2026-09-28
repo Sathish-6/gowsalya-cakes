@@ -31,10 +31,10 @@ function MobileMenu({ open, setOpen, active }) {
           />
 
           <motion.aside
-            className="absolute right-0 top-0 flex h-full w-[86%] max-w-sm flex-col bg-cream-50 shadow-lift"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
+            className="absolute inset-x-0 top-0 flex max-h-[92dvh] w-full flex-col overflow-hidden rounded-b-[2rem] bg-cream-50 shadow-lift"
+            initial={{ y: '-100%' }}
+            animate={{ y: 0 }}
+            exit={{ y: '-100%' }}
             transition={{ type: 'spring', stiffness: 320, damping: 34 }}
             role="dialog"
             aria-modal="true"

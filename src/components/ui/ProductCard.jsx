@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Heart } from 'lucide-react';
 import { photo } from '../../data/images';
 import { PRICE } from '../../data/products';
 import { buildFeaturedOrderMessage, waLink } from '../../lib/whatsapp';
@@ -18,7 +19,7 @@ export default function ProductCard({ product, category, index = 0, compact = fa
   return (
     <motion.article
       layout
-      className={`group relative flex flex-col overflow-hidden rounded-3xl bg-white/85 shadow-soft ring-1 ring-white/70 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-lift ${featured ? 'featured-product-card snap-start' : ''}`}
+      className={`group relative flex flex-col overflow-hidden rounded-3xl bg-white/85 shadow-soft ring-1 ring-white/70 backdrop-blur-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-lift ${featured ? 'featured-product-card w-[78vw] max-w-[290px] shrink-0 snap-start sm:w-auto sm:max-w-none' : ''}`}
       whileHover={{ y: -8 }}
       transition={{ type: 'spring', stiffness: 320, damping: 26 }}
     >
@@ -36,6 +37,12 @@ export default function ProductCard({ product, category, index = 0, compact = fa
           className="pointer-events-none absolute inset-0 bg-gradient-to-t from-choco-900/45 via-transparent to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-90"
           aria-hidden="true"
         />
+
+        {featured ? (
+          <span className="absolute right-3 top-3 grid h-7 w-7 place-items-center rounded-full bg-white/90 text-berry-600 shadow-soft" aria-hidden="true">
+            <Heart className="h-3.5 w-3.5 fill-current" />
+          </span>
+        ) : null}
 
         {signature ? (
           <span className="absolute left-4 top-4 rounded-full bg-gradient-to-r from-gold-400 to-gold-600 px-3 py-1 text-[0.62rem] font-bold uppercase tracking-[0.16em] text-choco-900 shadow-gold">

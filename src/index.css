@@ -778,11 +778,12 @@
   }
 
   .featured-product-card {
-    min-width: min(77vw, 290px);
+    min-width: 0;
   }
 
   .featured-product-card > div:last-of-type > div {
-    align-items: flex-start;
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .featured-product-card > div:last-of-type > div > span:first-child > span {
@@ -926,6 +927,10 @@
   }
 
   @media (max-width: 767px) {
+    .site-shell {
+      padding-bottom: calc(5.5rem + env(safe-area-inset-bottom));
+    }
+
     .hero-section {
       min-height: auto;
       padding-bottom: 4.5rem;

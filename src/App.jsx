@@ -24,7 +24,7 @@ export default function App() {
   const finishSplash = useCallback(() => setShowSplash(false), []);
 
   return (
-    <div className="relative min-h-screen overflow-x-clip bg-cream-50">
+    <div className="site-shell relative min-h-screen overflow-x-clip bg-cream-50">
       {showSplash ? <SplashScreen onComplete={finishSplash} /> : null}
 
       <a

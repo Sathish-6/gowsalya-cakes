@@ -6,9 +6,9 @@ import { WHATSAPP_TEL, buildOrderMessage, waLink } from '../../lib/whatsapp';
 import { BrandLockup } from '../ui/Brand';
 
 const socialLinks = [
-  { label: 'Facebook', href: 'https://www.facebook.com/', Icon: FacebookIcon },
-  { label: 'Instagram', href: 'https://www.instagram.com/', Icon: InstagramIcon },
-  { label: 'YouTube', href: 'https://www.youtube.com/', Icon: YoutubeIcon },
+  { label: 'Facebook', Icon: FacebookIcon },
+  { label: 'Instagram', Icon: InstagramIcon },
+  { label: 'YouTube', Icon: YoutubeIcon },
 ];
 
 export default function Footer() {
@@ -66,17 +66,16 @@ export default function Footer() {
               {FULL_ADDRESS}
             </a>
             <div className="mt-5 flex gap-2">
-              {socialLinks.map(({ label, href, Icon }) => (
-                <a
+              {socialLinks.map(({ label, Icon }) => (
+                <span
                   key={label}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-9 w-9 place-items-center rounded-full border border-berry-200 bg-white text-berry-700 transition hover:-translate-y-0.5 hover:bg-berry-50"
+                  title={label}
+                  className="grid h-9 w-9 place-items-center rounded-full border border-berry-200 bg-white text-berry-700"
                 >
                   <Icon className="h-4 w-4" aria-hidden="true" />
-                </a>
+                  <span className="sr-only">{label}</span>
+                </span>
               ))}
             </div>
           </div>

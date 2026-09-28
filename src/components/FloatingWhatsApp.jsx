@@ -76,7 +76,7 @@ export default function FloatingWhatsApp() {
           <motion.div
             className="fixed inset-x-0 bottom-0 z-[90] border-t border-cream-200 bg-cream-50/95 px-3 pt-3 shadow-lift backdrop-blur-lg"
             style={{ paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))' }}
-            initial={{ y: 90 }}
+            initial={false}
             animate={{ y: 0 }}
             exit={{ y: 90 }}
             transition={{ type: 'spring', stiffness: 300, damping: 30 }}
